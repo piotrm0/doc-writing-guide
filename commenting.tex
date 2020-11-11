@@ -1,0 +1,43 @@
+\usepackage{babel}
+% \def\final{} % uncomment this to hide all comments
+
+\ifdefined\final
+\else
+\def\enablecomments
+\fi
+
+\ifdefined\draft
+\def\enablecomments{}
+\fi
+
+
+\usepackage{soul}
+\usepackage{xcolor}
+
+\definecolor{LightGreen}{rgb}{0.80,1.00,0.80}
+\definecolor{LightBlue}{rgb}{0.80,0.80,1.00}
+\definecolor{LightRed}{rgb}{1.00,0.80,0.80}
+\definecolor{LightPurple}{rgb}{0.94,0.85,1.00}
+\definecolor{LightGray}{rgb}{0.90,0.90,0.90}
+
+
+\soulregister{\method}{7}
+\soulregister{\xspace}{7}
+\soulregister{\emph}{7}
+\soulregister{\ref}{7}
+
+\ifdefined\enablecomments
+  \DeclareRobustCommand{\commentformat}[3]{\sethlcolor{#2}\textsf{\hl{#1: #3}}}
+%  \newcommand{\sm}    [1]{\marginnote{\scriptsize\sethlcolor{LightGray}\hl{\textsf{#1}}}}
+  \newcommand{\sm}    [1]{{\scriptsize\sethlcolor{LightGray}\hl{\textsf{#1}}}}
+\else
+  \newcommand{\commentformat}[3]{}
+  \newcommand{\sm}    [1]{}
+\fi
+
+\newcommand{\pxm}   [1]{\commentformat{PM}{LightGreen}{#1}}
+\newcommand{\anupam}[1]{\commentformat{AD}{LightRed}{#1}}
+\newcommand{\caleb} [1]{\commentformat{CL}{LightBlue}{#1}}
+% \newcommand{\klas}  [1]{\commentformat{KL}{LightPurple}{#1}}
+\newcommand{\zifan}[1]{\commentformat{ZW}{LightPurple}{#1}}
+\newcommand{\todo}[1]{\commentformat{TODO}{LightRed}{#1}}

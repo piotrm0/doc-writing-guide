@@ -1,0 +1,141 @@
+\paragraph{Comprehension and Style}
+\begin{itemize}
+\item{} When discussing a term for the first time, describe its function before going into further
+  details. For example:
+
+  \textit{"We first introduce a concept of \textit{quantity of interest}
+    (QoI)~\cite{leino2018influence} as one of the building blocks for attributions. QoI is
+    represented as a continuous mapping from the input space to a scalar value or vector, which
+    identifies the question an explanation tool aims to answer."}
+
+  In this case, the representation is noted before its purpose. Consider switching them around.
+
+\item{} Each paragraph should feature one main point and supporting sentences. As a drafting
+  exercise, summarize each paragraph using a single simple sentence. If you cannot, consider
+  breaking it apart.
+
+  \begin{itemize}
+    \item{} The summary sentences should be mostly readable in that you can get a sense of the
+      paper just by reading the summary sentences and nothing else. Related, please fill in the
+      summary sentences as they help your proof-readers understand the purpose of each part of the
+      paper and give proper feedback.
+    \item{} Say what needs to be said and nothing more. What needs to be said is what you summarize
+      in the summary sentences.
+  \end{itemize}
+
+\item{} \textbf{Comma use}: use a comma in places where you pause reading. If there is no pause,
+  there should be no comma.
+
+\item{} Drop any word which is not essential. Examples:
+  \begin{itemize}
+  \item{} ``We can observe that 2+2=4'' can become ``We observe that 2+2=4'' can become ``Note that
+    2+2=4'' can sometimes become ``2+2=4''.
+  \item{} You do not need to mention \textit{"In this paper we focus on ..."}. You can avoid
+    \textit{"In this paper"} overall and try to avoid "we focus on" or similar as well. \textit{"In
+      this paper we do X"} becomes \textit{"We do X"} or when possible just \textit{X}.
+  \item{} ``In order to X'' becomes ``To X''.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Writing for Peer Review}
+\begin{itemize}
+\item{} Do not make opinion statements especially when referring to other papers. Also try not to
+  make points about who was first to whatever lest a reviewer disagrees.
+
+\item{} Avoid adjectives especially when they indicate opinion. Example:
+
+  \textit{While we believe that overfitting plays a major role in membership inference attacks, our
+    investigation reports an interesting observation.}
+
+\item{} Avoid over-emphasizing a single related work. You do not want your work to be rejected
+  because someone believes X is not valid work and might if they feel like you are building
+  upon it too centrally.
+\end{itemize}
+
+\paragraph{Figures}
+\begin{itemize}
+  \item{} Changing font sizes to fit more text is frowned upon. Avoid this if possible. It is ok
+    for captions to be long. Shrinking table content text may be acceptable. This is tricky for
+    figures. If you are using matplotlib, you can use the following approach to unify font sizes
+    between matplotlib and latex. First, in matplotlib, specify figure size to be what its size in
+    the paper will be and then \textbf{NOT} use the \verb|scale| option in \verb|includegraphics|.
+
+    You can check how much space a figure should take up with \verb|\printlength{\linewidth}|, for
+    example, here this returns linewidth=\printlength{\linewidth}. Make your matplotlib figures
+    this size:
+\begin{verbatim}
+\includegraphics[width=...]{...}
+\end{verbatim}
+
+\begin{verbatim}
+\usepackage{printlen}\uselengthunit{in}
+\end{verbatim}
+
+\end{itemize}
+
+\paragraph{Formalisms}
+\begin{itemize}
+\item{} Distinguish definitions from equations. One option to do this is use a different symbol
+  for definitions like $ \defeq $ as defined:
+
+\begin{verbatim}
+\newcommand{\stacklabel}[1]{%
+  \stackrel{\smash{%
+    \scriptscriptstyle \mathrm{#1}}%
+  }%
+}
+\newcommand{\defeq}{\stacklabel{def}=}
+\end{verbatim}
+
+\item{} Try to use standard notation whenever possible. If standard notation is not available in
+  your field, try to find related notation from nearby formalisms. Whatever you do, stay
+  consistent.
+\end{itemize}
+
+\paragraph{Citations}
+\begin{itemize}
+\item{} Avoid referring to works as nouns and instead add a citation to a point being made. It
+  is preferable to avoid the statement referring to the work or author and instead discuss what
+  you wanted to mention about that work, adding a citation. For example:
+
+  \textbf{Original:} \textit{Shokri et al. introduced the concept of Shadow model, which are
+    essentially replicates of the target model. }
+
+  \textbf{Better:} \textit{The shadow models attack constructs shadow models to replicate the
+    target model (Shokri et al.). }
+
+\item Use citation capabilities in latex. Do not manage the bibliography yourself. The
+  \texttt{natbib} package features three citation commands. \verb|cite| as in
+  ``\cite{leino2018influence}'', \verb|citet| as in ``\citet{leino2018influence}'', and
+  \verb|citep| as in ``\cite{leino2018influence}''.
+
+  \item{} Citations do not excuse plagiarism. If you are copying text, it needs to be quoted.
+    Technical writing rarely requires quotation so use sparingly. Guidelines regarding quotation
+    and plagiarism are available:
+    \url{https://writing.wisc.edu/handbook/assignments/quotingsources/}. Note that you also need to
+    quote yourself if copying text from another work. Again, this should be rare. Also note
+    difficulties in this regard in the Anonymity section.
+
+  \item{} Make sure the same works are not cited as multiple items in the bibliography. For works
+    available in preprint (arXiv, tech-report, etc) and peer-reviewed venue simultaneously, include
+    only the peer-reviewed version in the bibliography.
+
+
+\end{itemize}
+
+\paragraph{Anonymity}
+\begin{itemize}
+  \item{} Your own works need to be referred to in third party. Links that may de-anonymize you
+    (software, artifacts, etc), need to be removed or if needed for peer-review, anonymized.
+\end{itemize}
+
+\paragraph{Experiments and Artifacts}
+\begin{itemize}
+  \item{} Include enough information to replicate an experiment or at least run an experiment
+    demonstrating the same point. This means that not all details need to be presented but
+    parameters being investigated do. Options that could have an impact on the conclusions made
+    need to be included as well. It is often difficult to determine these so software artifacts
+    with exact experimental setups are preferable.
+  \item{} If you include benchmarking results, also include information necessary to replicate them
+    such as the hardware involved.
+\end{itemize}
