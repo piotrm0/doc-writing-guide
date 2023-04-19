@@ -17,6 +17,12 @@ Who gets to review your paper is primarily based on:
 
 \subsection{Reviewers know what you have done.}
 
+\subsection{Follow the rules.}
+
+Venue rules largely overlap in intend with the above but may have additional concerns. If specific
+rules are enumerated, not following them may result in a ``table rejection'', a rejection of a
+submission before peer review is carried out.
+
 \section{Structure}
 
 \subsection{title}
@@ -41,6 +47,34 @@ Kent Beck's form of a good abstract:
   \item{} Say what follows from your solution.
   \end{enumerate}
   These can each be a single sentence though a few sentences for each my work.
+
+  \textbf{Slightly overlong example:}
+
+  {\small
+
+\sm{1: State the problem:} LSTM-based recurrent neural networks are the state-of-the-art for many
+natural language processing (NLP) tasks. Despite their performance, it is unclear whether, or how,
+LSTMs learn structural features of natural languages such as subject-verb number agreement in
+English.
+
+\sm{2: Say why it is an interesting problem:} Lacking this understanding, the generality of LSTMs
+on this task and their suitability for related tasks remains uncertain. Further, errors cannot be
+properly attributed to a lack of structural capability, training data omissions, or other
+exceptional faults.
+
+\sm{3: Say what your solution achieves:} We introduce \emph{influence paths}, a causal account of
+structural properties as carried by paths across gates and neurons of a recurrent neural network.
+The approach refines the notion of influence (the subject's grammatical number has influence on the
+grammatical number of the subsequent verb) into a set of gate-level or neuron-level paths. The set
+localizes and segments the concept (e.g., subject-verb agreement), its constituent elements (e.g.,
+the subject), and related or interfering elements (e.g., attractors).
+
+\sm{4: Say what follows from your solution:} We exemplify the methodology on a widely-studied
+multi-layer LSTM language model, demonstrating its accounting for subject-verb number agreement.
+The results offer both a finer and a more complete view of an LSTM's handling of this structural
+aspect of the English language than prior results based on diagnostic classifiers and ablation.
+
+  }
 
 \subsection{Introduction}
 
