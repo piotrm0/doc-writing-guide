@@ -1,4 +1,72 @@
-\paragraph{Comprehension and Style}
+\section{Goals}
+
+\subsection{Get the right reviewers}
+
+Who gets to review your paper is primarily based on:
+\begin{itemize}
+
+\item{} Keywords. Sometimes these are standardized. Sometimes they indicate a recurring category or
+  a special category for a venue.
+
+\item{} Paper matching. An automated system matches relevance of a submission to articles written
+  by possible reviewers.
+
+\item{} Title. The program committee (the pool of reviewers at a venue) may explicitly demonstrate
+  preference for reviewing a paper. They will usually not look beyond the title when doing this.
+\end{itemize}
+
+\subsection{Reviewers know what you have done.}
+
+\section{Structure}
+
+\subsection{title}
+
+  Common patterns:
+
+  Do not introduce a proper name for a technique being presented in the title. It will likely not
+  stick and the title will be obfsucated for it.
+
+  Do not include a saying or quote in the title.
+
+\subsection{author} information may need to be anonymized.
+
+\subsection{abstract}
+
+Kent Beck's form of a good abstract:
+
+  \begin{enumerate}
+  \item{} State the problem.
+  \item{} Say why it is an interesting problem.
+  \item{} Say what your solution is and what it achieves.
+  \item{} Say what follows from your solution.
+  \end{enumerate}
+  These can each be a single sentence though a few sentences for each my work.
+
+\subsection{Introduction}
+
+  The last paragraph/section of the introduction should be clearly labeled ``Contributions'' and
+  include an enumerated list of contributions.
+
+\subsection{Background}
+
+\subsection{Methodology}
+
+\subsection{Results}
+
+\subsection{Discussion}
+
+\subsection{Related Work}
+
+  Discuss what you showed that the related work did not. Discuss where you agree. Discuss where you
+  disagree and conjecture as to why.
+
+\subsection{Conclusion}
+
+ Discuss your results in context of the presented related work.
+
+
+\section{Comprehension and Style}
+
 \begin{itemize}
 \item{} When discussing a term for the first time, describe its function before going into further
   details. For example:
@@ -37,7 +105,8 @@
   \end{itemize}
 \end{itemize}
 
-\paragraph{Writing for Peer Review}
+\section{Writing for Peer Review}
+
 \begin{itemize}
 \item{} Do not make opinion statements especially when referring to other papers. Also try not to
   make points about who was first to whatever lest a reviewer disagrees.
@@ -52,7 +121,8 @@
   upon it too centrally.
 \end{itemize}
 
-\paragraph{Figures}
+\section{Figures}
+
 \begin{itemize}
   \item{} Changing font sizes to fit more text is frowned upon. Avoid this if possible. It is ok
     for captions to be long. Shrinking table content text may be acceptable. This is tricky for
@@ -73,7 +143,8 @@
 
 \end{itemize}
 
-\paragraph{Formalisms}
+\section{Formalisms}
+
 \begin{itemize}
 \item{} Distinguish definitions from equations. One option to do this is use a different symbol
   for definitions like $ \defeq $ as defined:
@@ -92,7 +163,9 @@
   consistent.
 \end{itemize}
 
-\paragraph{Citations}
+
+\section{Citations}
+
 \begin{itemize}
 \item{} Avoid referring to works as nouns and instead add a citation to a point being made. It
   is preferable to avoid the statement referring to the work or author and instead discuss what
@@ -101,8 +174,8 @@
   \textbf{Original:} \textit{Shokri et al. introduced the concept of Shadow model, which are
     essentially replicates of the target model. }
 
-  \textbf{Better:} \textit{The shadow models attack constructs shadow models to replicate the
-    target model (Shokri et al.). }
+  \textbf{Better:} \textit{The shadow models attack (Shokri et al.) constructs shadow models to
+    replicate the target model. }
 
 \item Use citation capabilities in latex. Do not manage the bibliography yourself. The
   \texttt{natbib} package features three citation commands. \verb|cite| as in
@@ -120,16 +193,19 @@
     available in preprint (arXiv, tech-report, etc) and peer-reviewed venue simultaneously, include
     only the peer-reviewed version in the bibliography.
 
-
 \end{itemize}
 
-\paragraph{Anonymity}
+
+\section{Anonymity}
+
 \begin{itemize}
   \item{} Your own works need to be referred to in third party. Links that may de-anonymize you
     (software, artifacts, etc), need to be removed or if needed for peer-review, anonymized.
 \end{itemize}
 
-\paragraph{Experiments and Artifacts}
+
+\section{Experiments and Artifacts}
+
 \begin{itemize}
   \item{} Include enough information to replicate an experiment or at least run an experiment
     demonstrating the same point. This means that not all details need to be presented but
